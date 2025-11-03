@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import PasswordDisplay from './PasswordDisplay'
+import '../styles/PG.css'
 
 const PasswordGenerator: React.FC = () => {
   const [length, setLength] = useState<number>(12)
@@ -19,12 +22,13 @@ const PasswordGenerator: React.FC = () => {
     if (includeNumbers) charset += numberChars
     if (includeSymbols) charset += symbolChars
 
+    if (!charset.length) return setPassword('')
+
     let newPassword = ''
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * charset.length)
       newPassword += charset[randomIndex]
     }
-
     setPassword(newPassword)
   }
 
@@ -60,19 +64,12 @@ const PasswordGenerator: React.FC = () => {
           onChange={() => setIncludeSymbols(!includeSymbols)}
         />
 
-        <Button
-          className="mt-3 w-100"
-          variant="primary"
-          onClick={generatePassword}
-        >
+        <Button className="mt-3 w-100" variant="primary" onClick={generatePassword}>
           Generar Contraseña
         </Button>
 
-        {password && (
-          <div className="alert alert-success mt-3 text-center">
-            <strong>{password}</strong>
-          </div>
-        )}
+        {/* Aquí usamos el componente que tiene la lógica de copiar */}
+        <PasswordDisplay password={password} />
       </Form>
     </div>
   )

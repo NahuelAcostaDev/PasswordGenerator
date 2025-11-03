@@ -1,0 +1,43 @@
+button.btn-primary {
+    background-color: var(--color-primary);
+    border: none;
+    transition: 0.2s;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #e04600;
+  }
+  
+  .form-check-label {
+    color: var(--color-dark);
+  }
+  
+  .alert-success {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+  }
+
+
+.pw-box {
+    background-color: var(--color-accent, #CAE7F7);
+    color: var(--color-dark, #49261D);
+    border-radius: 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    overflow-wrap: anywhere; 
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  button.btn-primary {
+    background-color: var(--color-primary, #FB4D00);
+    border: none;
+  }
+  
+  button.btn-primary[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
