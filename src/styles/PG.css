@@ -5,7 +5,7 @@ button.btn-primary {
   }
   
   button.btn-primary:hover {
-    background-color: #e04600;
+    background-color: #181346;
   }
   
   .form-check-label {
@@ -21,7 +21,7 @@ button.btn-primary {
 
 .pw-box {
     background-color: var(--color-accent, #CAE7F7);
-    color: var(--color-dark, #49261D);
+    color: var(--color-dark, #000000);
     border-radius: 8px;
     min-height: 44px;
     display: flex;
